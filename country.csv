@@ -1,31 +1,111 @@
-Country, Timezone
-New York, America/New_York
-UK, Europe/London
-Japan, Asia/Tokyo
+Country,Timezone
 India, Asia/Kolkata
-Australia, Sydney
-Germany, Europe/Berlin
-Canada, Toronto
-Brazil, America/Sao_Paulo
-China, Asia/Shanghai
-South Africa, Africa/Johannesburg
-France, Europe/Paris
 Mexico, America/Mexico_City
+Chile,America/Santiago
+Ireland,Europe/Dublin
+Indonesia,Asia/Jakarta
 Russia, Europe/Moscow
-South Korea, Asia/Seoul
-Argentina, America/Argentina/Buenos_Aires
-Turkey, Europe/Istanbul
-Saudi Arabia, Asia/Riyadh
-Nigeria, Africa/Lagos
-Singapore, Asia/Singapore
-New Zealand, Pacific/Auckland
-Italy, Europe/Rome
 Spain, Europe/Madrid
-Switzerland, Europe/Zurich
-Egypt, Africa/Cairo
-Thailand, Asia/Bangkok
-Colombia, America/Bogota
-Ireland, Europe/Dublin
+Hungary, Europe/Budapest
+Australia (Adelaide), Australia/Adelaide
+Greece, Europe/Athens
+Nigeria, Africa/Lagos
+Peru, America/Lima
+Argentina,America/Argentina/Buenos_Aires
+Argentina, America/Argentina/Buenos_Aires
+Tuvalu, Pacific/Funafuti
+China, Asia/Shanghai
+Spain,Europe/Madrid
+Singapore,Asia/Singapore
+Switzerland,Europe/Zurich
+China,Asia/Shanghai
+Philippines, Asia/Manila
+Fiji, Pacific/Fiji
+Germany, Europe/Berlin
+Singapore, Asia/Singapore
+Japan, Asia/Tokyo
+Vietnam, Asia/Ho_Chi_Minh
+Taiwan, Asia/Taipei
+Indonesia (Jakarta), Asia/Jakarta
+Brazil,America/Sao_Paulo
+Canada, America/Toronto
+Denmark, Europe/Copenhagen
+Marshall Islands, Pacific/Majuro
+United Arab Emirates, Asia/Dubai
 Norway, Europe/Oslo
-Chile, America/Santiago
+Colombia,America/Bogota
+Nepal, Asia/Kathmandu
+Saudi Arabia, Asia/Riyadh
+Mongolia, Asia/Ulaanbaatar
+Kazakhstan (Almaty), Asia/Almaty
+Venezuela, America/Caracas
+Australia (Perth), Australia/Perth
+New Zealand,Pacific/Auckland
+Samoa, Pacific/Apia
+Palau, Pacific/Palau
+Netherlands, Europe/Amsterdam
+Australia (Melbourne), Australia/Melbourne
+Papua New Guinea, Pacific/Port_Moresby
+Thailand, Asia/Bangkok
+Brazil, America/Sao_Paulo
+Portugal, Europe/Lisbon
+Afghanistan, Asia/Kabul
+Egypt, Africa/Cairo
 Indonesia, Asia/Jakarta
+France, Europe/Paris
+Pakistan, Asia/Karachi
+Austria, Europe/Vienna
+South Africa,Africa/Johannesburg
+Malaysia, Asia/Kuala_Lumpur
+Italy,Europe/Rome
+Colombia, America/Bogota
+India,Asia/Kolkata
+Thailand,Asia/Bangkok
+Nigeria,Africa/Lagos
+South Korea, Asia/Seoul
+Canada,America/Toronto
+Micronesia (Palikir), Pacific/Pohnpei
+Japan,Asia/Tokyo
+Chile, America/Santiago
+UK,Europe/London
+Norway,Europe/Oslo
+Kazakhstan (Astana), Asia/Oral
+France,Europe/Paris
+Finland, Europe/Helsinki
+Romania, Europe/Bucharest
+Kiribati (Tarawa), Pacific/Tarawa
+Nauru, Pacific/Nauru
+Czech Republic, Europe/Prague
+Kiribati (Kiritimati), Pacific/Kiritimati
+Israel, Asia/Jerusalem
+New York,America/New_York
+Sweden, Europe/Stockholm
+Indonesia (Surabaya), Asia/Makassar
+Turkey,Europe/Istanbul
+Sri Lanka, Asia/Colombo
+Australia (Brisbane), Australia/Brisbane
+China (Macau), Asia/Macau
+South Africa, Africa/Johannesburg
+New Zealand, Pacific/Auckland
+Ireland, Europe/Dublin
+Saudi Arabia,Asia/Riyadh
+South Korea,Asia/Seoul
+Solomon Islands, Pacific/Guadalcanal
+Vanuatu, Pacific/Efate
+Australia (Sydney), Australia/Sydney
+Italy, Europe/Rome
+Germany,Europe/Berlin
+Bangladesh, Asia/Dhaka
+Australia,Australia/Sydney
+Uzbekistan, Asia/Tashkent
+North Korea, Asia/Pyongyang
+Poland, Europe/Warsaw
+Switzerland, Europe/Zurich
+Russia,Europe/Moscow
+Egypt,Africa/Cairo
+Mexico,America/Mexico_City
+Turkey, Europe/Istanbul
+Tonga, Pacific/Tongatapu
+Australia, Australia/Sydney
+Micronesia (Chuuk), Pacific/Chuuk
+China (Hong Kong), Asia/Hong_Kong

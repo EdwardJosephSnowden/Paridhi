@@ -2,29 +2,35 @@ import tkinter as tk
 from tkinter import ttk
 from datetime import datetime
 import pytz
-from ttkthemes import ThemedStyle
 import csv
 import pyttsx3
+import threading
+from ttkthemes import ThemedStyle
 
 def load_country_timezones(filename):
     country_timezones = {}
     valid_timezones = set(pytz.all_timezones)
-    
+
     with open(filename, 'r', encoding='utf-8') as file:
-        csv_reader = csv.reader(file)
+        csv_reader = csv.DictReader(file)
         for row in csv_reader:
-            if len(row) == 2:
-                country_name, timezone = row
-                if timezone in valid_timezones:
-                    country_timezones[country_name] = timezone
-                else:
-                    print(f"Invalid timezone '{timezone}' for country '{country_name}'")
-   
+            country_name = row.get('Country')
+            timezone = row.get('Timezone')
+            if country_name and timezone.strip() in valid_timezones:
+                country_timezones[country_name] = timezone.strip()
+            else:
+                print(f"Invalid data in CSV: {row}")
+
     return country_timezones
 
 def update_clock():
     selected_country = country_var.get()
-    timezone = pytz.timezone(country_timezones[selected_country])
+    try:
+        timezone = pytz.timezone(country_timezones[selected_country])
+    except KeyError:
+        print(f"Error: Timezone not found for {selected_country}")
+        return
+
     current_time = datetime.now(timezone)
     time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
     search_label.config(text=f"Time In {selected_country} is -", anchor="center", justify="center")
@@ -33,16 +39,32 @@ def update_clock():
 
 def on_country_select(event):
     selected_country = country_var.get()
-    timezone = pytz.timezone(country_timezones[selected_country])
+    try:
+        timezone = pytz.timezone(country_timezones[selected_country])
+    except KeyError:
+        print(f"Error: Timezone not found for {selected_country}")
+        return
+
     current_time = datetime.now(timezone)
     tim = current_time.strftime("%Y-%m-%d %H:%M:%S")
     saytime = f"Time in {selected_country} is {tim}"
     update_clock()
-    speak(saytime)
+    speak_in_thread(saytime)
 
 def speak(text):
     engine.say(text)
     engine.runAndWait()
+
+def speak_in_thread(text):
+    # Check if the engine is already running
+    if not engine._inLoop:
+        # Start the engine only if it's not already running
+        engine.runAndWait()
+    else:
+        print("The engine is already running.")
+
+    thread = threading.Thread(target=speak, args=(text,))
+    thread.start()
 
 engine = pyttsx3.init()
 zira_voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0"
@@ -69,12 +91,19 @@ time_label_time = ttk.Label(root, text="", font=("Helvetica", 36))
 time_label_time.pack(pady=20)
 
 country_var.set("India")
+
+initial_country = country_var.get()
+initial_timezone = country_timezones.get(initial_country)
+
+if initial_timezone:
+    current_time = datetime.now(pytz.timezone(initial_timezone))
+    tim = current_time.strftime("%Y-%m-%d %H:%M:%S")
+    saytime = f"Time in {initial_country} is {tim}"
+    speak_in_thread(saytime)
+else:
+    print(f"Error: Timezone not found for {initial_country}")
+
 update_clock()
 country_menu.bind("<<ComboboxSelected>>", on_country_select)
 
-current_time = datetime.now(pytz.timezone(country_timezones[country_var.get()]))
-tim = current_time.strftime("%Y-%m-%d %H:%M:%S")
-saytime = f"Time in {country_var.get()} is {tim}"
-
-speak(saytime)
 root.mainloop()
